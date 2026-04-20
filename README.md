@@ -1,41 +1,13 @@
 # temperature_figure
 
-![status](https://img.shields.io/badge/status-in%20progress-yellow)
+I started this project from a simple observation — I kept checking the weather app before leaving the house but still ended up under or overdressed. The number on the screen never really translated into what to actually wear. So I wanted to make something physical that could do that for you.
 
-A 3D-printed ambient temperature object that physically signals what to wear —
-jacket, hoodie, or t-shirt — by rotating a figure's arm based on outdoor temperature.
+**Week 1** was spent modelling the overall shape. I looked at how objects like pine cones respond to humidity changes and used that as a reference for something that reacts to its environment passively and visually.
 
----
+**Week 2** I focused on the figure itself. The idea is a small human form whose arm moves to one of three positions depending on the temperature outside — jacket below 12°C, hoodie between 12 and 22°C, t-shirt above 22°C.
 
-## How It Works
+**Week 3** I worked out the twisting mechanism through the 3D model. The arm rotation is driven by a MG90S micro servo inside the body, controlled by a QT Py RP2040 that receives temperature data wirelessly from an ESP32-S3 placed outdoors via Bluetooth Low Energy.
 
-Two wireless units communicate over Bluetooth Low Energy (BLE):
-
-**External Unit** — outdoors, sensing
-- MCU: Teyleten ESP32-S3 Supermini
-- Sensor: MCP9808 I²C temperature sensor
-- Power: Qimoo 800mAh LiPo + HiLetgo TP4056 USB-C charger
-- Reads temperature → broadcasts value over BLE
-
-**Internal Unit** — indoors, movement
-- MCU: Adafruit QT Py RP2040
-- Actuator: MG90S metal-gear micro servo
-- Power: PowerBoost 1000C + EEMB 1100mAh LiPo
-- Receives BLE packet → moves servo to one of three positions
-
-| Temperature | State   | Arm Angle |
-|-------------|---------|-----------|
-| Below 12°C  | Jacket  | −38°      |
-| 12 – 22°C   | Hoodie  | 0°        |
-| Above 22°C  | T-Shirt | +52°      |
-
----
-
-## Progress
-
-**April 19, 2026** — Body design complete, ready to 3D print.
-All electronics fitted to enclosure. This week: print, assemble, and bring it to life.
-
----
+The two units are self-contained and battery powered. This week the goal is to 3D print the parts, assemble everything, and get it running.
 
 🔗 [github.com/dtafuri-lab/temperature_figure](https://github.com/dtafuri-lab/temperature_figure)
