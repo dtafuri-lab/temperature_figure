@@ -39,9 +39,11 @@ The figure is printed in two halves. The servo sits inside the torso and connect
 
 ## Figure states
 
-![Figure states flat](human_figure/human_figure_states.png)
+![Figure 1](Figure00001.png)
 
-![Figure states 3D](human_figure/human_3d_states.png)
+![Figure 2](Figure00002.png)
+
+![Figure 3](Figure00003.png)
 
 ![Wiring diagram](human_figure/wiring_diagram.png)
 
