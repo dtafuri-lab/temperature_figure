@@ -8,7 +8,7 @@ The idea is a small 3D-printed figure that sits on a shelf or wall or closet ind
 
 **Week 2** I focused on the figure itself, proportions, how the arm connects, and how the three states would read clearly at a glance from across a room.
 
-**Week 3** I worked out the twisting mechanism through the 3D model. The arm rotation is driven by a MG90S micro servo inside the body, controlled by a QT Py RP2040 that receives temperature data wirelessly from an ESP32-S3 placed outdoors via Bluetooth Low Energy. The two units are fully self-contained and battery powered — no wires between them, nothing to plug in daily.
+**Week 3** I worked out the twisting mechanism through the 3D model. The arm rotation is driven by a MG90S micro servo inside the body, controlled by a QT Py RP2040 that receives temperature data wirelessly from an ESP32-S3 placed outdoors via Bluetooth Low Energy. The two units are fully self-contained and battery powered
 
 This week the goal is to 3D print the parts, assemble everything, and get it running.
 
