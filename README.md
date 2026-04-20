@@ -14,19 +14,52 @@ This week the goal is to 3D print the parts, assemble everything, and get it run
 
 ---
 
-**Components**
+## What is the project
+
+The system is made of two physical objects:
+
+1x indoor figure — sits on a shelf, displays the outfit state by moving its arm
+1x external thermostat — placed outside, reads the temperature and sends it wirelessly
+
+---
+
+## How the code works
+
+The ESP32-S3 outdoors reads the temperature from the MCP9808 sensor over I²C every few seconds and broadcasts the value via Bluetooth Low Energy. The QT Py RP2040 indoors listens for that broadcast, receives the temperature value, and maps it to one of three servo angles.
+
+Below 12°C the arm moves to the jacket position. Between 12 and 22°C it holds at hoodie. Above 22°C it raises to t-shirt. The servo holds that position until the next reading changes it.
+
+---
+
+## How the body works
+
+The figure is printed in two halves. The servo sits inside the torso and connects directly to the arm via a short shaft. The arm pivots on a pin hinge at the shoulder. The external unit is a separate enclosure that houses the ESP32-S3, sensor, battery, and charger — it mounts outside a window or on a balcony.
+
+---
+
+## Figure states
+
+![Figure states flat](human_figure/human_figure_states.png)
+
+![Figure states 3D](human_figure/human_3d_states.png)
+
+![Wiring diagram](human_figure/wiring_diagram.png)
+
+---
+
+## Components purchased
 
 Outdoor unit
-- Teyleten ESP32-S3 Supermini
-- MCP9808 I²C temperature sensor
-- Qimoo 800mAh LiPo battery
-- HiLetgo TP4056 USB-C charger module
+Teyleten ESP32-S3 Supermini
+MCP9808 I²C temperature sensor
+Qimoo 800mAh LiPo battery
+HiLetgo TP4056 USB-C charger module
 
 Indoor unit
-- Adafruit QT Py RP2040
-- MG90S metal gear micro servo
-- EEMB 1100mAh LiPo battery
-- Adafruit PowerBoost 1000C
+Adafruit QT Py RP2040
+MG90S metal gear micro servo
+EEMB 1100mAh LiPo battery
+Adafruit PowerBoost 1000C
 
 ---
 
