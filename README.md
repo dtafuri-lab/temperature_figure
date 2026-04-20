@@ -43,6 +43,8 @@ The figure is printed in two halves. The servo sits inside the torso and connect
 
 ![Here 2](HERE2.png)
 
+- Generated diagram for the wiring
+
 ![Wiring diagram](human_figure/wiring_diagram.png)
 
 ---
